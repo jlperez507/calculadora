@@ -4,7 +4,7 @@ var num = document.getElementsByClassName("n");
              escibir(this.id);
           });
     }
-    
+
 function escibir(te){
   if (document.getElementById('display').innerText.length < 8){
     if (document.getElementById('display').innerText == "0"){
@@ -34,6 +34,7 @@ var calculo;
 var calculonew;
 var operacion = "";
 var igual = false;
+
 document.getElementById('igual').addEventListener('click', function(){
   if (operacion != ""){
     if (document.getElementById('display').innerText != ""){
@@ -87,6 +88,21 @@ document.getElementById('igual').addEventListener('click', function(){
   }
 });
 
+var num = document.getElementsByClassName("op");
+    for (var i = 0; i < num.length; i++) {
+          num[i].addEventListener("click",function() {
+            if (this.id == "mas"){
+               datoscalculadora("+");
+            }else if (this.id == "menos") {
+              datoscalculadora("-");
+            }else if (this.id == "por") {
+              datoscalculadora("*");
+            }else if (this.id == "divide") {
+              datoscalculadora("/");
+            }
+          });
+    }
+
 function datoscalculadora(oper){
   if (document.getElementById('display').innerText != ""){
     operacion = oper;
@@ -99,7 +115,7 @@ function datoscalculadora(oper){
    }
 }
 
-document.getElementById('mas').addEventListener('click', function(){
+/*document.getElementById('mas').addEventListener('click', function(){
   datoscalculadora("+");
 });
 
@@ -112,8 +128,7 @@ document.getElementById('por').addEventListener('click', function(){
 });
 document.getElementById('dividido').addEventListener('click', function(){
   datoscalculadora("/");
-});
-
+});*/
 
 document.getElementById('sign').addEventListener('click', function(){
   if (document.getElementById('display').innerText != ""){
