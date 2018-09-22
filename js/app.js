@@ -1,34 +1,10 @@
-document.getElementById('1').addEventListener('click', function(){
-  escibir(1);
-});
-document.getElementById('2').addEventListener('click', function(){
-  escibir(2);
-});
-document.getElementById('3').addEventListener('click', function(){
-  escibir(3);
-});
-document.getElementById('4').addEventListener('click', function(){
-  escibir(4);
-});
-document.getElementById('5').addEventListener('click', function(){
-  escibir(5);
-});
-document.getElementById('6').addEventListener('click', function(){
-  escibir(6);
-});
-document.getElementById('7').addEventListener('click', function(){
-  escibir(7);
-});
-document.getElementById('8').addEventListener('click', function(){
-  escibir(8);
-});
-document.getElementById('9').addEventListener('click', function(){
-  escibir(9);
-});
-document.getElementById('0').addEventListener('click', function(){
-  escibir(0);
-});
-
+var num = document.getElementsByClassName("n");
+    for (var i = 0; i < num.length; i++) {
+          num[i].addEventListener("click",function() {
+             escibir(this.id);
+          });
+    }
+    
 function escibir(te){
   if (document.getElementById('display').innerText.length < 8){
     if (document.getElementById('display').innerText == "0"){
@@ -110,6 +86,7 @@ document.getElementById('igual').addEventListener('click', function(){
     }
   }
 });
+
 function datoscalculadora(oper){
   if (document.getElementById('display').innerText != ""){
     operacion = oper;
@@ -121,6 +98,7 @@ function datoscalculadora(oper){
      igual = false;
    }
 }
+
 document.getElementById('mas').addEventListener('click', function(){
   datoscalculadora("+");
 });
@@ -135,6 +113,7 @@ document.getElementById('por').addEventListener('click', function(){
 document.getElementById('dividido').addEventListener('click', function(){
   datoscalculadora("/");
 });
+
 
 document.getElementById('sign').addEventListener('click', function(){
   if (document.getElementById('display').innerText != ""){
@@ -154,3 +133,13 @@ document.getElementById('punto').addEventListener('click', function(){
     }
   }
 });
+
+var tcl = document.getElementsByClassName("tecla");
+    for (var i=0; i< tcl.length; i++) {
+        tcl[i].addEventListener("mousedown",function() {
+           this.style.transform = "scale(1.1, 1.1)";
+        });
+        tcl[i].addEventListener("mouseup",function() {
+          this.style.transform = "scale(1, 1)";
+        });
+    }
