@@ -105,6 +105,10 @@ var num = document.getElementsByClassName("op");
 
 function datoscalculadora(oper){
   if (document.getElementById('display').innerText != ""){
+    if (operacion != ""){
+      calculo = calcular(operacion, calculo, document.getElementById('display').innerText);
+      document.getElementById('display').innerText =  calculo;
+    }
     operacion = oper;
     calculonew = "";
     calculo = document.getElementById('display').innerText;
@@ -115,21 +119,17 @@ function datoscalculadora(oper){
    }
 }
 
-/*document.getElementById('mas').addEventListener('click', function(){
-  datoscalculadora("+");
-});
-
-document.getElementById('menos').addEventListener('click', function(){
-  datoscalculadora("-");
-});
-
-document.getElementById('por').addEventListener('click', function(){
-  datoscalculadora("*");
-});
-document.getElementById('dividido').addEventListener('click', function(){
-  datoscalculadora("/");
-});*/
-
+function calcular(op, val1, val2){
+  if (op == "+"){
+    return val1 + val2;
+  }else if (op == "-") {
+    return val1 - val2;
+  }else if (op == "*") {
+    return val1 * val2;
+  }else if (op == "/") {
+    return val1 / val2;
+  }
+}
 document.getElementById('sign').addEventListener('click', function(){
   if (document.getElementById('display').innerText != ""){
       document.getElementById('display').innerText = (-1) * Number(document.getElementById('display').innerText);
